@@ -5,17 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script>
-      function PlaySound() {
-          alert("hello");
-        var bflat = new audio();
-        bflat.src = "bflat.mp3";
-        document.getElementById(bflat);
-        bflat.Play();
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max)
       }
+      let sounds = [
+        '1.ogg',
+        '2.ogg',
+        '3.ogg',
+        '4.ogg',
+        '5.ogg',
+        '6.ogg',
+        '7.ogg',
+        '8.ogg',
+        '9.ogg'
+      ];
+      var band = new Audio();
+      band.src = "sounds[getRandomInt(9)]";
     </script>
   </head>
   <body>
-      <audio id="bflat" src="bflat.mp3"></audio>
-      <button onclick="document.getElementById('bflat').play()">Play!</button>
+      <button onclick="band.play()">Play!</button>
   </body>
 </html>
