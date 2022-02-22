@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style type="text/css">
+      nav#nav1{margin-top: 24px;}
+      nav#nav1 > button{
+        background: #288CDE;
+        color:#000;
+        padding:40px;
+        text-decoration: wavy;
+        border-radius: 50px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: xx-large;
+      }
+    </style>
     <script>
       function getRandomInt(max) {
-        return Math.floor(Math.random() * max)
+        return Math.floor(Math.random() * max);
       }
       let sounds = [
         '1.ogg',
@@ -20,10 +32,25 @@
         '9.ogg'
       ];
       var band = new Audio();
-      band.src = "sounds[getRandomInt(9)]";
+      let indx;
+      let prev;
+      function playSound() {
+        indx = getRandomInt(9);
+        if (prev !== indx) {
+          band.src = sounds[indx];
+        }
+        else {
+          band.src = sounds[getRandomInt(9)]
+        }
+        prev = indx;
+        band.play();
+      }
     </script>
   </head>
   <body>
-      <button onclick="band.play()">Play!</button>
+    <nav id="nav1">
+      <button onclick="playSound()">Play!</button>
+    </nav>
+    <img src="figglebottom.jpg">
   </body>
 </html>
