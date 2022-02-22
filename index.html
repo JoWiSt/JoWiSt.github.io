@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function PlaySound() {
+    alert("hello");
+  var bflat = new audio();
+  bflat.src = "bflat.mp3";
+  document.getElementById(bflat);
+  bflat.Play();
+}
+</script>
+</head>
+<body>
+    <audio id="bflat" src="bflat.mp3"></audio>
+    <button onclick="document.getElementById('bflat').play()">Play!</button>
+</body>
+</html>
