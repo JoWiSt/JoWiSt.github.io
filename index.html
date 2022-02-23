@@ -34,8 +34,10 @@
       let band;
       let indx;
       let prev;
-      function playSound() {
+      function startUp() {
         band = new Audio();
+      }
+      function playSound() {
         indx = getRandomInt(9);
         while (prev == indx) {
           indx = getRandomInt(9);
@@ -48,6 +50,9 @@
   </head>
   <body>
     <main id="main1">
+      <h1>
+        <button onclick="startUp()">Initialize program</button>
+      </h1>
       <button onclick="playSound()">Play!</button>
     </main>
     <img src="figglebottom.jpg">
