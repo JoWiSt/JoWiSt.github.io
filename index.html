@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style type="text/css">
-      nav#nav1{margin-top: 24px;}
-      nav#nav1 > button{
+      main#main1{margin-top: 24px;}
+      main#main1 > button{
         background: #288CDE;
         color:#000;
         padding:40px;
@@ -31,26 +31,25 @@
         '8.ogg',
         '9.ogg'
       ];
-      var band = new Audio();
+      let band;
       let indx;
       let prev;
       function playSound() {
+        band = new Audio();
         indx = getRandomInt(9);
-        if (prev !== indx) {
-          band.src = sounds[indx];
+        while (prev == indx) {
+          indx = getRandomInt(9);
         }
-        else {
-          band.src = sounds[getRandomInt(9)]
-        }
+        band.src = sounds[indx];
         prev = indx;
         band.play();
       }
     </script>
   </head>
   <body>
-    <nav id="nav1">
+    <main id="main1">
       <button onclick="playSound()">Play!</button>
-    </nav>
+    </main>
     <img src="figglebottom.jpg">
   </body>
 </html>
