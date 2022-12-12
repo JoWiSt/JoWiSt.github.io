@@ -1,49 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style type="text/css">
-      main#main1{margin-top: 30px;}
-    </style>
-    <script>
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
-      let sounds = [
-        '1.ogg',
-        '2.ogg',
-        '3.ogg',
-        '4.ogg',
-        '5.ogg',
-        '6.ogg',
-        '7.ogg',
-        '8.ogg',
-        '9.ogg'
-      ];
-      let band;
-      let indx;
-      let prev;
-      band = new Audio();
-      function playSound() {
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style type="text/css">
+    main#main1 {
+      margin-top: 30px;
+    }
+  </style>
+  <script>
+    function reqListener () {
+      console.log(this.responseText);
+    }
+    var oReq = new XMLHttpRequest(); // New request object
+    oReq.onload = function() {
+        // This is where you handle what to do with the response.
+        // The actual data is found on this.responseText
+        alert(this.responseText); // Will alert: 42
+    };
+    oReq.open("get", "points.json", true);
+    oReq.send();
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    let sounds = [
+      '1.ogg',
+      '2.ogg',
+      '3.ogg',
+      '4.ogg',
+      '5.ogg',
+      '6.ogg',
+      '7.ogg',
+      '8.ogg',
+      '9.ogg'
+    ];
+    let band;
+    let indx;
+    let prev;
+    band = new Audio();
+    function playSound() {
+      indx = getRandomInt(9);
+      while (prev == indx) {
         indx = getRandomInt(9);
-        while (prev == indx) {
-          indx = getRandomInt(9);
-        }
-        band.src = sounds[indx];
-        prev = indx;
-        band.play();
       }
-    </script>
-  </head>
-  <body>
-    <main id="main1">
-      <h1>
-        <button onclick="playSound()">Hello</button>
-      </h1>
-      <button style="background: #288CDE; color:#000; padding:40px; text-decoration: wavy; border-radius: 50px; font-family:'Times New Roman', Times, serif; font-size: xx-large;" onclick="playSound()">Worship organ hit</button>
-    </main>
-    <img src="figglebottom.jpg">
-  </body>
+      band.src = sounds[indx];
+      prev = indx;
+      band.play();
+    }
+  </script>
+</head>
+
+<body>
+  <main id="main1">
+    <h1>
+      <button onclick="playSound()">Hello</button>
+    </h1>
+    <button
+      style="background: #288CDE; color:#000; padding:40px; text-decoration: wavy; border-radius: 50px; font-family:'Times New Roman', Times, serif; font-size: xx-large;"
+      onclick="playSound()">Worship organ hit</button>
+  </main>
+  <img src="figglebottom.jpg">
+</body>
+
 </html>

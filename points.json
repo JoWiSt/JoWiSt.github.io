@@ -1,7 +1,37 @@
 {
     "bitches":[
-        {"jasonPoints": 0},
-        {"beckCoins": 0},
-        {"jackBucks": 0}
+        {
+            "jasonPoints": [
+                {"kya": 0},
+                {"larissa": 0},
+                {"jude": 0},
+                {"jason": 0},
+                {"isaac": 0},
+                {"gus": 0},
+                {"beck": 0 }
+            ]
+        },
+        {
+            "beckCoins": [
+                {"kya": 0},
+                {"larissa": 0},
+                {"jude": 0},
+                {"jason": 0},
+                {"isaac": 0},
+                {"gus": 0},
+                {"beck": 0 }
+            ]
+        },
+        {
+            "jackBucks": [
+                {"kya": 0},
+                {"larissa": 0},
+                {"jude": 0},
+                {"jason": 0},
+                {"isaac": 0},
+                {"gus": 0},
+                {"beck": 0 }
+            ]
+        }
     ]
 }
