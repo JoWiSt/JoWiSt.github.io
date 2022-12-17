@@ -11,7 +11,7 @@
     }
   </style>
   <script>
-    var pointsJSON
+    var pointsJSONtxt
     function reqListener () {
       console.log(this.responseText);
     }
@@ -20,7 +20,7 @@
       console.log(this.response)
       pointsJSONtxt = this.responseText
     };
-    oReq.open("get", "points.json", true);
+    oReq.open("get", "points.json", false);
     oReq.send();
     points = JSON.parse(pointsJSONtxt);
     console.log(points);
@@ -60,56 +60,56 @@
       <table>
         <tr>
           <td> </td>
-          <th>BeckCoin  </th>
-          <th>JasonPoints  </th>
+          <th>BeckCoin</th>
+          <th>JasonPoints</th>
           <th>JackBucks</th>
         </tr>
         <tr>
           <th>Kya</th>
-          <td id="kya_beck">  0</td>
-          <td id="kya_jason">  0</td>
-          <td id="kya_jack">  0</td>
+          <td id="kya_beck">0</td>
+          <td id="kya_jason">0</td>
+          <td id="kya_jack">0</td>
         </tr>
         <tr>
           <th>Jason</th>
-          <td id="jason_beck">  0</td>
+          <td id="jason_beck">0</td>
           <td>N/A</td>
-          <td id="jason_jack">  0</td>
+          <td id="jason_jack">0</td>
         </tr>
         <tr>
           <th>Larissa</th>
-          <td id="larissa_beck">  0</td>
-          <td id="larissa_jason">  0</td>
-          <td id="larissa_jack">  0</td>
+          <td id="larissa_beck">0</td>
+          <td id="larissa_jason">0</td>
+          <td id="larissa_jack">0</td>
         </tr>
         <tr>
           <th>Jude</th>
-          <td id="jude_beck">  0</td>
-          <td id="jude_jason">  0</td>
-          <td id="jude_jack">  0</td>
+          <td id="jude_beck">0</td>
+          <td id="jude_jason">0</td>
+          <td id="jude_jack">0</td>
         </tr>
         <tr>
           <th>Isaac</th>
-          <td id="isaac_beck">  0</td>
-          <td id="isaac_jason">  0</td>
-          <td id="isaac_jack">  0</td>
+          <td id="isaac_beck">0</td>
+          <td id="isaac_jason">0</td>
+          <td id="isaac_jack">0</td>
         </tr>
         <tr>
           <th>Gus</th>
-          <td id="gus_beck">  0</td>
-          <td id="gus_jason">  0</td>
-          <td id="gus_jack">  0</td>
+          <td id="gus_beck">0</td>
+          <td id="gus_jason">0</td>
+          <td id="gus_jack">0</td>
         </tr>
         <tr>
           <th>Beck</th>
           <td>N/A</td>
-          <td id="beck_jason">  0</td>
-          <td id="beck_jack">  0</td>
+          <td id="beck_jason">0</td>
+          <td id="beck_jack">0</td>
         </tr>
         <tr>
           <th>Jack</th>
-          <td id="jack_beck">  0</td>
-          <td id="jack_jason">  0</td>
+          <td id="jack_beck">0</td>
+          <td id="jack_jason">0</td>
           <td>N/A</td>
         </tr>
       </table>
