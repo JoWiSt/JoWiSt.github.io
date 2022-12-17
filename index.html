@@ -17,10 +17,12 @@
     }
     var oReq = new XMLHttpRequest();
     oReq.onload = function() {
-      pointsJSON = this.responseText
+      pointsJSONtxt = this.responseText
     };
     oReq.open("get", "points.json", true);
     oReq.send();
+    points = JSON.parse(pointsJSONtxt);
+    console.log(points);
     function getRandomInt(max) {
       return Math.floor(Math.random() * max);
     }
@@ -54,7 +56,62 @@
 <body>
   <main id="main1">
     <h1>
-      <button onclick="playSound()">Hello</button>
+      <table>
+        <tr>
+          <td> </td>
+          <th>BeckCoin</th>
+          <th>JasonPoints</th>
+          <th>JackBucks</th>
+        </tr>
+        <tr>
+          <th>Kya</th>
+          <td id="kya_beck">0</td>
+          <td id="kya_jason">0</td>
+          <td id="kya_jack">0</td>
+        </tr>
+        <tr>
+          <th>Jason</th>
+          <td id="jason_beck">0</td>
+          <td>N/A</td>
+          <td id="jason_jack">0</td>
+        </tr>
+        <tr>
+          <th>Larissa</th>
+          <td id="larissa_beck">0</td>
+          <td id="larissa_jason">0</td>
+          <td id="larissa_jack">0</td>
+        </tr>
+        <tr>
+          <th>Jude</th>
+          <td id="jude_beck">0</td>
+          <td id="jude_jason">0</td>
+          <td id="jude_jack">0</td>
+        </tr>
+        <tr>
+          <th>Isaac</th>
+          <td id="isaac_beck">0</td>
+          <td id="isaac_jason">0</td>
+          <td id="isaac_jack">0</td>
+        </tr>
+        <tr>
+          <th>Gus</th>
+          <td id="gus_beck">0</td>
+          <td id="gus_jason">0</td>
+          <td id="gus_jack">0</td>
+        </tr>
+        <tr>
+          <th>Beck</th>
+          <td>N/A</td>
+          <td id="beck_jason">0</td>
+          <td id="beck_jack">0</td>
+        </tr>
+        <tr>
+          <th>Jack</th>
+          <td id="jack_beck">0</td>
+          <td id="jack_jason">0</td>
+          <td>N/A</td>
+        </tr>
+      </table>
     </h1>
     <button
       style="background: #288CDE; color:#000; padding:40px; text-decoration: wavy; border-radius: 50px; font-family:'Times New Roman', Times, serif; font-size: xx-large;"
