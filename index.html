@@ -24,7 +24,7 @@
       oReq.open("get", "points.json", false);
       oReq.send();
       points = JSON.parse(pointsJSONtxt);
-      document.getElementById("kya_beck").innerHTML = "&nbsp;&nbsp;" + points.beckCoins.kya;
+      document.getElementById("kya_beck").innerHTML = "&nbsp;&nbsp;" + points.beckCoins.kya.value;
       document.getElementById("kya_jason").innerHTML = "&nbsp;&nbsp;" + points.jasonPoints.kya;
       document.getElementById("kya_jack").innerHTML = "&nbsp;&nbsp;" + points.jackBucks.kya;
       document.getElementById("larissa_beck").innerHTML = "&nbsp;&nbsp;" + points.beckCoins.larissa;
