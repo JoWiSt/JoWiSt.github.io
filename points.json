@@ -7,30 +7,33 @@
                 {"jude": 0},
                 {"jack": 0},
                 {"isaac": 0},
-                {"gus": 0},
-                {"beck": 0 }
+                {"gus": 1},
+                {"beck": 0},
+                {"cat": 6}
             ]
         },
         {
             "beckCoins": [
-                {"kya": 0},
+                {"kya": 1},
                 {"larissa": 0},
                 {"jude": 0},
-                {"jason": 0},
+                {"jason": 1},
                 {"isaac": 0},
-                {"gus": 0},
-                {"jack": 0 }
+                {"gus": 9},
+                {"jack": 0},
+                {"cat": 0}
             ]
         },
         {
             "jackBucks": [
-                {"kya": 0},
+                {"kya": 9603},
                 {"larissa": 0},
                 {"jude": 0},
                 {"jason": 0},
-                {"isaac": 0},
+                {"isaac": 3},
                 {"gus": 0},
-                {"beck": 0 }
+                {"beck": 0},
+                {"cat": 0}
             ]
         }
     ]
