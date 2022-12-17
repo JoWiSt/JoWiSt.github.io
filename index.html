@@ -17,6 +17,7 @@
     }
     var oReq = new XMLHttpRequest();
     oReq.onload = function() {
+      console.log(this.response)
       pointsJSONtxt = this.responseText
     };
     oReq.open("get", "points.json", true);
