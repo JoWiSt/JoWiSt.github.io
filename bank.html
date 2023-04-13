@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>T3</title>
+  </head>
+  <body>
+    <h1>T3</h1>
+
+    <label for="user">Recipient:</label>
+    <select id="user" name="user">
+      <option value="kya">Kya</option>
+      <option value="jason">Jason</option>
+      <option value="larissa">Larissa</option>
+      <option value="jude">Jude</option>
+      <option value="isaac">Isaac</option>
+      <option value="gus">Gus</option>
+      <option value="beck">Beck</option>
+      <option value="jack">Jack</option>
+      <option value="cat">Cat</option>
+    </select>
+
+    <label for="currtype">Currency type to add:</label>
+    <select id="currtype" name="currtype">
+      <option value="beckCoins">BeckCoins</option>
+      <option value="jasonPoints">JasonPoints</option>
+      <option value="jackBucks">JackBucks</option>
+    </select>
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" min="0">
+
+    <button id="add-btn">Add</button>
+    <button id="remove-btn">Remove</button>
+
+    <script>
+        const API_URL = "points.json"; // Change this to your JSON file URL
+
+        const addBtn = document.querySelector("#add-btn");
+        const removeBtn = document.querySelector("#remove-btn");
+        const userSelect = document.querySelector("#user");
+        const currType = document.querySelector("#currtype");
+        const amountInput = document.querySelector("#amount");
+        
+        addBtn.addEventListener("click", () => {
+          const user = userSelect.value;
+          const currency = currType.value;
+          const amount = parseInt(amountInput.value);
+        
+          if (isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid amount.");
+            return;
+          }
+        
+          fetch(API_URL)
+            .then(response => response.json())
+            .then(data => {
+              data["bitches"][currType][user] += amount;
+              return fetch(API_URL, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+              });
+            })
+            .then(response => {
+              if (response.ok) {
+                alert(`Successfully added ${amount} ${currType} to ${user}.`);
+              } else {
+                throw new Error("Failed to update JackBucks.");
+              }
+            })
+            .catch(error => console.error(error));
+        });
+        
+        removeBtn.addEventListener("click", () => {
+          const user = userSelect.value;
+          const currency = currType.value;
+          const amount = parseInt(amountInput.value);
+        
+          if (isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid amount.");
+            return;
+          }
+        
+          fetch(API_URL)
+            .then(response => response.json())
+            .then(data => {
+              data["bitches"][currType][user] -= amount;
+              return fetch(API_URL, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+              });
+            })
+            .then(response => {
+              if (response.ok) {
+                alert(`Successfully removed ${amount} ${currType} to ${user}.`);
+              } else {
+                throw new Error("Failed to update JackBucks.");
+              }
+            })
+            .catch(error => console.error(error));
+        });
+    </script>
+  </body>
+</html>

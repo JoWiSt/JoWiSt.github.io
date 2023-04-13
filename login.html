@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title style="color: plum; font-size: xx-large;">Friend Currency T3 Login</title>
+  </head>
+  <body>
+    <h1>Triple Threat Treasurers ONLY</h1>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <button id="login-btn">Login</button>
+
+    <script>
+        const ADMIN_PASSWORD = "lordofyaga777"; // Change this to your desired password
+
+        const loginBtn = document.querySelector("#login-btn");
+        const passwordInput = document.querySelector("#password");
+        
+        loginBtn.addEventListener("click", () => {
+          const password = passwordInput.value;
+        
+          if (password === ADMIN_PASSWORD) {
+            window.location.href = "bank.html";
+          } else {
+            alert("Incorrect password, please try again.");
+          }
+        });
+        </script>
+  </body>
+</html>
