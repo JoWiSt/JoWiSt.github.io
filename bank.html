@@ -40,7 +40,15 @@
         const userSelect = document.querySelector("#user");
         const currType = document.querySelector("#currtype");
         const amountInput = document.querySelector("#amount");
-        
+        let points;
+
+        fetch(API_URL)
+          .then(response => response.json())
+          .then(data => {
+            points = data;
+          })
+          .catch(error => console.error(error));
+
         addBtn.addEventListener("click", () => {
           const user = userSelect.value;
           const currency = currType.value;
@@ -50,21 +58,16 @@
             alert("Please enter a valid amount.");
             return;
           }
-        
-          let points;
 
-          fetch(API_URL)
-            .then(response => response.json())
-            .then(data => {
-              data["bitches"][currency][user] += amount;
-              return fetch(API_URL, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data)
-              });
-            })
+          points["bitches"][currency][user] += amount;
+            
+          fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(points)
+          })
             .then(response => {
               if (response.ok) {
                 alert(`Successfully added ${amount} ${currType} to ${user}.`);
@@ -84,19 +87,16 @@
             alert("Please enter a valid amount.");
             return;
           }
-        
-          fetch(API_URL)
-            .then(response => response.json())
-            .then(data => {
-              data["bitches"][currency][user] -= amount;
-              return fetch(API_URL, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data)
-              });
-            })
+
+          points["bitches"][currency][user] -= amount;
+          
+          fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+          })
             .then(response => {
               if (response.ok) {
                 alert(`Successfully removed ${amount} ${currType} to ${user}.`);
