@@ -19,7 +19,7 @@
       <option value="cat">Cat</option>
     </select>
 
-    <label for="currtype">Currency type to add:</label>
+    <label for="currtype">Currency type to modify:</label>
     <select id="currtype" name="currtype">
       <option value="beckCoins">BeckCoins</option>
       <option value="jasonPoints">JasonPoints</option>
@@ -72,7 +72,7 @@
               if (response.ok) {
                 alert(`Successfully added ${amount} ${currType} to ${user}.`);
               } else {
-                throw new Error("Failed to update JackBucks.");
+                throw new Error("Failed to update currency.");
               }
             })
             .catch(error => console.error(error));
@@ -95,13 +95,13 @@
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(points)
           })
             .then(response => {
               if (response.ok) {
                 alert(`Successfully removed ${amount} ${currType} to ${user}.`);
               } else {
-                throw new Error("Failed to update JackBucks.");
+                throw new Error("Failed to update currency.");
               }
             })
             .catch(error => console.error(error));
