@@ -51,16 +51,19 @@
             return;
           }
         
+          let points;
+
           fetch(API_URL)
             .then(response => response.json())
             .then(data => {
-              data["bitches"][currType][user] += amount;
+              points = data;
+              points.bitches.currency.user += amount;
               return fetch(API_URL, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json"
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(points)
               });
             })
             .then(response => {
@@ -86,13 +89,14 @@
           fetch(API_URL)
             .then(response => response.json())
             .then(data => {
-              data["bitches"][currType][user] -= amount;
+              points = data;
+              points.bitches.currency.user -= amount;
               return fetch(API_URL, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json"
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(points)
               });
             })
             .then(response => {
