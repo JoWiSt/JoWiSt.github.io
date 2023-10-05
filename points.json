@@ -1,25 +1,8 @@
 {
 "bitches":
     {
-        "jasonPoints": {
-            "kya": 5,
-            "larissa": 0,
-            "jude": 0,
-            "jack": 0,
-            "isaac": 0,
-            "gus": 1,
-            "beck": 0,
-            "cat": 6
-        },        
         "beckCoins": {
-            "kya": 1,
-            "larissa": 0,
-            "jude": 0,
-            "jason": 1,
-            "isaac": 0,
-            "gus": 9,
-            "jack": 0,
-            "cat": 0
+            "jack": 14,
         },    
         "jackBucks": {
             "kya": 9603,
