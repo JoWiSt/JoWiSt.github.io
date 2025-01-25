@@ -1,0 +1,79 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the content */
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main heading style */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Small description */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Social links container */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual social link styling */
+.social-icon {
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    background-color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    background-color: #0073e6; /* Default hover color */
+}
+
+/* Specific color for each social icon */
+.social-icon.instagram:hover {
+    background-color: #e4405f; /* Instagram color */
+}
+
+.social-icon.facebook:hover {
+    background-color: #1877f2; /* Facebook color */
+}
+
+.social-icon.twitter:hover {
+    background-color: #1da1f2; /* Twitter color */
+}
+
+.social-icon.linkedin:hover {
+    background-color: #0077b5; /* LinkedIn color */
+}

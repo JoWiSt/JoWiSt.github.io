@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style type="text/css">
+    main#main1 {
+      margin-top: 30px;
+    }
+  </style>
+  <script defer>
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+    let sounds = [
+      '1.ogg',
+      '2.ogg',
+      '3.ogg',
+      '4.ogg',
+      '5.ogg',
+      '6.ogg',
+      '7.ogg',
+      '8.ogg',
+      '9.ogg'
+    ];
+    let band;
+    let indx;
+    let prev;
+    band = new Audio();
+    function playSound() {
+      indx = getRandomInt(9);
+      while (prev == indx) {
+        indx = getRandomInt(9);
+      }
+      band.src = sounds[indx];
+      prev = indx;
+      band.play();
+    }
+  </script>
+</head>
+
+<body>
+  <main id="main1">
+    <button
+      style="background: #288CDE; color:#000; padding:40px; text-decoration: wavy; border-radius: 50px; font-family:'Times New Roman', Times, serif; font-size: xx-large;"
+      onclick="playSound()">Worship organ hit</button>
+  </main>
+  <img src="figglebottom.jpg">
+</body>
+
+</html>
